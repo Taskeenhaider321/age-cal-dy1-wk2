@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      integrity="sha384-lZfu7Y8CcI+H6IMs+Kkvm6WLOsCCvsxjCC9C8YQ+UMeR8DYbzWUNjCqXxfrb+3R"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="output.css" />
+    <link 
+      rel="stylesheet"
+      href="path/to/font-awesome/css/font-awesome.min.css"
+    />
+    <title>Frontend Mentor | Age calculator app</title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .error {
+        border-color: red;
+        color: red;
+      }
+    </style>
+  </head>
+
+  <body class="bg-[#DBDBDB] dark:bg-black font-poppins">
+    <main class="flex justify-center items-center pt-20">
+      <div  class="w-[90%] sm:w-2/3 md:w-1/2 lg:w-1/3 md:p-10 bg-white dark:bg-[#854CFF] rounded-2xl rounded-br-[100px] p-8"
+      >
+      <div class="flex">
+        <img class="moon cursor-pointer" src="./images/moon.svg"/>
+        <img class="sun cursor-pointer ml-4" src="./images/sun.svg"/>
+      </div>
+        <form id="ageForm" class="flex flex-row gap-4">
+          <div class="flex flex-col">
+            <label for="dayInput" class="text-lg dayInput font-bold uppercase"
+              >Day</label
+            >
+            <input
+              type="text"
+              name="dayInput"
+              id="dayInput"
+              placeholder="DD"
+              maxlength="2"
+              class="w-full inputs text-lg border border-gray-300 rounded-lg px-3 py-2 focus:border-blue-500 focus:outline-none"
+            />
+            <p id="dayInputErrorMessage" class="text-xs text-red-500"></p>
+          </div>
+
+          <div class="flex flex-col">
+            <label
+              for="monthInput"
+              class="text-lg monthInput font-bold uppercase"
+              >Month</label
+            >
+            <input
+              type="text"
+              name="monthInput"
+              id="monthInput"
+              placeholder="MM"
+              maxlength="2"
+              class="w-full inputs text-lg border border-gray-300 rounded-lg px-3 py-2 focus:border-blue-500 focus:outline-none"
+            />
+            <p id="monthInputErrorMessage" class="text-xs text-red-500"></p>
+          </div>
+
+          <div class="flex flex-col">
+            <label for="yearInput" class="text-lg yearInput font-bold uppercase"
+              >Year</label
+            >
+            <input
+              type="text"
+              name="yearInput"
+              id="yearInput"
+              placeholder="YYYY"
+              maxlength="4"
+              class="w-full inputs text-lg border border-gray-300 rounded-lg px-3 py-2 focus:border-blue-500 focus:outline-none"
+            />
+            <p id="yearInputErrorMessage" class="text-xs text-red-500"></p>
+          </div>
+        </form>
+
+        <div class="submit_block relative flex flex-col items-center">
+            <hr class="w-full my-5 border-t border-gray-300" />
+            <button
+              type="submit"
+              onclick="calculateAge()"
+              class="sumbit_btn mt-1 bg-purple-500 text-white md:right-0 lg:right-0 absolute sm:p-2 md:p-0 rounded-full"
+            >
+              <img src="./images/icon-arrow.svg" alt="icon" />
+            </button>
+          </div>
+          
+        <div class="text-4xl inputs md:text-5xl  font-bold italic flex flex-col justify-center">
+          <div class="dark:text-white"><span id="years" class="text-[#854CFF] dark:text-black">--</span> years</div>
+          <div class="dark:text-white"><span id="months" class="text-[#854CFF] dark:text-black">--</span> month</div>
+          <div class="dark:text-white"><span id="days" class="text-[#854CFF] dark:text-black">--</span> days</div>
+          <div class="dark:text-white"><span id="totaldays" class="text-[#854CFF] dark:text-black">--</span> total</div>
+        </div>
+      </div>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
